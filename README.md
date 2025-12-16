@@ -34,6 +34,11 @@ Este projeto é a interface frontend do sistema de gerenciamento de contatos. De
 
 ---
 
+## 🎥 Demonstração do Projeto
+
+[![Demonstração do sistema](https://img.youtube.com/vi/6hzqJ-X0v8s/0.jpg)](https://youtu.be/6hzqJ-X0v8s)
+---
+
 ## 🖱️ Tecnologias Utilizadas
 
 - **Angular 17+** - Framework frontend
@@ -142,7 +147,7 @@ frontend/
 
 ---
 
-## 🛣️ Rotas da Aplicação
+##  ⬆️ Rotas da Aplicação
 
 | Rota | Componente | Descrição |
 |------|------------|-----------|
