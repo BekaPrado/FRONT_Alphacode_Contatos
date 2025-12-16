@@ -1,61 +1,234 @@
-# Frontend
+# <img width="400" height="100" alt="logoalpha" src="https://github.com/user-attachments/assets/36b22176-a836-4c31-8a5e-9f632eeda7b8" />
+# Sistema de Contatos - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+Interface web moderna desenvolvida em Angular para gerenciamento de contatos.
 
-## Development server
+---
 
-To start a local development server, run:
+## Índice
+
+- Sobre o Projeto
+- Tecnologias Utilizadas
+- Pré-requisitos
+- Instalação
+- Executando o Projeto
+- Estrutura do Projeto
+- Funcionalidades
+- Configuração da API
+
+---
+
+## 📄 Sobre o Projeto
+
+Este projeto é a interface frontend do sistema de gerenciamento de contatos. Desenvolvido com Angular, possui um design moderno com tema escuro, responsividade e oferece uma experiência de usuário intuitiva.
+
+### Funcionalidades e Fluxo das páginas
+
+- ✅ Página inicial com nome em Destaque
+- ✅ Listagem de contatos em tabela
+- ✅ Cadastro de novos contatos
+- ✅ Edição de contatos existentes
+- ✅ Exclusão de contatos existentes.
+- ✅ Design responsivo
+- ✅ Tema escuro moderno
+
+---
+
+## 🖱️ Tecnologias Utilizadas
+
+- **Angular 17+** - Framework frontend
+- **TypeScript** - Linguagem d
+- **HTML** - Estrutura das páginas
+- **CSS** - Estilização e animações
+- **RxJS** - Programação reativa
+- **Angular Router** - Navegação entre páginas
+
+---
+
+## ⏸️ Para executar...
+
+Antes de executar, você precisa ter instalado:
+
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- [Angular CLI](https://angular.io/cli)
+
+### Verifique a instalação
+
+```bash
+node -v
+npm -v
+ng version
+```
+
+### Instale Angular CLI
+
+```bash
+npm install -g @angular/cli
+```
+
+---
+
+## ▶️ Executando...
+
+### Passo 1: Clonar o repositório
+
+```bash
+git clone https://github.com/BekaPrado/FRONT_Alphacode_Contatos
+```
+
+### Passo 2: Entrar na pasta do projeto
+
+```bash
+cd frontend-contatos
+```
+
+### Passo 3: Instalar dependências
+
+```bash
+npm install
+```
+---
+
+### Rodar a aplicação
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse no navegador: Exemplo: **http://localhost:4200**
 
-## Code scaffolding
+## 📁 Estrutura do Projeto
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+frontend/
+│
+├── public/
+│   └── img/
+│       └── logo.png              # Logo da empresa
+│
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── home/             # Página inicial
+│   │   │   │   ├── home.ts
+│   │   │   │   ├── home.html
+│   │   │   │   └── home.css
+│   │   │   │
+│   │   │   ├── contato-lista/    # Lista de contatos
+│   │   │   │   ├── contato-lista.ts
+│   │   │   │   ├── contato-lista.html
+│   │   │   │   └── contato-lista.css
+│   │   │   │
+│   │   │   └── contato-form/     # Formulário (criar/editar)
+│   │   │       ├── contato-form.ts
+│   │   │       ├── contato-form.html
+│   │   │       └── contato-form.css
+│   │   │
+│   │   ├── services/
+│   │   │   └── contato.service.ts  # Serviço HTTP
+│   │   │
+│   │   ├── app.html              # Layout principal
+│   │   ├── app.css               # Estilos do layout
+│   │   ├── app.ts                # Componente raiz
+│   │   └── app.routes.ts         # Configuração de rotas
+│   │
+│   ├── styles.css                # Estilos globais
+│   └── index.html                # Página HTML principal
+│
+├── angular.json                  # Configuração do Angular
+├── package.json                  # Dependências do projeto
+└── README.md                     # Este arquivo
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 🛣️ Rotas da Aplicação
+
+| Rota | Componente | Descrição |
+|------|------------|-----------|
+| `/` | Home | Página inicial |
+| `/contatos` | ContatoLista | Lista de contatos |
+| `/contatos/novo` | ContatoForm | Cadastro de Contato|
+| `/contatos/editar/:id` | ContatoForm | Edição do Contato|
+
+---
+
+## ⚙️ Configuração da API
+
+Configure a URL no arquivo abaixo de acordo com sua pasta da API.
+
+**`src/app/services/contato.service.ts`**
+
+```typescript
+private apiUrl = 'http://localhost/Back%20de%20Contatos/api/contatos.php';
 ```
 
-## Building
+### CORS
 
-To build the project run:
+A API deve permitir requisições do frontend. Isso é configurado no backend com:
 
-```bash
-ng build
+```php
+header("Access-Control-Allow-Origin: *");
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 🖥️ Telas
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Página Inicial 
+
+- Apresentação 
+- Cards animados 
+- Botão de acesso aos contatos
+
+### Lista de Contatos
+
+- Tabela com todos os contatos
+- Avatar com inicial do nome
+- Botões de editar e excluir
+
+### Cadastro de Contato
+
+- Campos: nome, data de nascimento, email, profissão, telefone, celular
+- Checkboxes: WhatsApp, SMS, Email
+- Validação de campos obrigatórios
+- Modo criar e editar no mesmo componente
+
+---
+
+## 📱 Responsividade
+
+O sistema é totalmente responsivo e se adapta a:
+
+- 🖥️ Desktop (1200px+)
+- 💻 Laptop (992px - 1199px)
+- 📱 Tablet (768px - 991px)
+- 📱 Mobile (até 767px)
+
+---
+
+##  ⭕ Possíveis Problemas ->
+
+### Erro: "Cannot find module"
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Erro: "Port 4200 is already in use"
 
 ```bash
-ng e2e
+ng serve --port 4201
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 👩‍💻
 
-## Additional Resources
+**Rebeka Marcelino**
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-"# FRONT_Alphacode_Contatos" 
-"# FRONT_Alphacode_Contatos" 
+- GitHub: [BekaPrado](https://github.com/BekaPrado)
+- LinkedIn: [Rebeka Marcelino](www.linkedin.com/in/rebekamarcelino)
+
+
+## 🔗 Links Relacionados
+
+- [Backend da API](https://github.com/BekaPrado/CRUD_Alphacode_Contatos) 
