@@ -201,17 +201,6 @@ header("Access-Control-Allow-Origin: *");
 
 ---
 
-## 📱 Responsividade
-
-O sistema é totalmente responsivo e se adapta a:
-
-- 🖥️ Desktop (1200px+)
-- 💻 Laptop (992px - 1199px)
-- 📱 Tablet (768px - 991px)
-- 📱 Mobile (até 767px)
-
----
-
 ##  ⭕ Possíveis Problemas ->
 
 ### Erro: "Cannot find module"
